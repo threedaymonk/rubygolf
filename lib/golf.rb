@@ -47,4 +47,8 @@ class<<Golf={}
       b
     }[1..-1].map{|x|[x[0],x[-1]].uniq*"-"}
   end
+
+  def hole8 a
+    (1...a).inject([0, 1]){|b,c| b << (b[-1] + b[-2]) }[1..-1]
+  end
 end
