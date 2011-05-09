@@ -33,4 +33,18 @@ class<<Golf={}
       }
     }.flatten(1).sort_by{|x|[x.length,x]}
   end
+
+  def hole6 a
+    (1..a).map{|b|
+      c = [b%3==0&&:fizz,b%5==0&&:buzz].reject{|x|!x}*""
+      c == "" ? b : c
+    }
+  end
+
+  def hole7 a
+    a.inject([[]]){|b,c|
+      (b[-1][-1] == (c-1)) ? b[-1] << c : b << [c]
+      b
+    }[1..-1].map{|x|[x[0],x[-1]].uniq*"-"}
+  end
 end
