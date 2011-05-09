@@ -8,7 +8,7 @@ class<<Golf={}
   end
 
   def hole3 a
-    (2..a).inject(1){|b,c|b*c}
+    hole1 2..a
   end
 
   def hole4 a
