@@ -42,10 +42,10 @@ class<<Golf={}
   end
 
   def hole7 a
-    a.inject([[]]){|b,c|
-      (b[-1][-1] == (c-1)) ? b[-1] << c : b << [c]
+    a.inject([]){|b,c|
+      (b[-1]||[])[-1] == (c-1) ? b[-1] << c : b << [c]
       b
-    }[1..-1].map{|x|[x[0],x[-1]].uniq*"-"}
+    }.map{|x|[x[0],x[-1]].uniq*"-"}
   end
 
   def hole8 a
