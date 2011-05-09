@@ -49,6 +49,6 @@ class<<Golf={}
   end
 
   def hole8 a
-    (1...a).inject([0, 1]){|b,c| b << (b[-1] + b[-2]) }[1..-1]
+    (1...a).inject([0, 1]){|b,c| b << b[-1]+b[-2] }[1..-1]
   end
 end
