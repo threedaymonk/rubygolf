@@ -1,6 +1,6 @@
 Golf={}
 i=0
-  %q^
+ '
     a.inject :*
 
     a.split.sort_by{|w|w[1]}*" "
@@ -40,6 +40,6 @@ i=0
       return e[-1][0] if e[-1][1] >= e.inject(0){|x,(y,z)|x+z}/2
       b.map!{|x|x-[e[0][0]]}
     }
-  ^.split(/\n\n/).map{|a|eval "def Golf.hole#{i+=1} a
+  '.split(/\n\n/).map{|a|eval "def Golf.hole#{i+=1} a
 "+a+"
 end"}
