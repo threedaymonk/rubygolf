@@ -1,7 +1,7 @@
 Golf={}
 i=0
   %q^
-    a.inject(1){|b,c|b*c}
+    a.inject :*
 
     a.split.sort_by{|w|w[1,1]}*" "
 
