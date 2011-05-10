@@ -44,4 +44,18 @@ class<<Golf={}
   def hole8 a
     (1...a).inject([1]){|b,c| b << b[-1]+(b[-2]||0) }
   end
+
+  def hole9 a
+    b = File.read(a).split(/\n/).map{|b|b.split(/, /)}
+    loop{
+      e = b.inject({}){|h,c|d=c[0] or next
+        h[d]||=0
+        h[d]+=1
+        h
+      }.sort_by{|_,x|x}
+      f = e.inject(0){|x,(y,z)|x+z}/2
+      return e[-1][0] if f <= e[-1][1]
+      b.map!{|x|x-[e[0][0]]}
+    }
+  end
 end
