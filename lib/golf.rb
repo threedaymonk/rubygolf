@@ -3,7 +3,7 @@ i=0
   %q^
     a.inject :*
 
-    a.split.sort_by{|w|w[1,1]}*" "
+    a.split.sort_by{|w|w[1]}*" "
 
     hole1 2..a
 
