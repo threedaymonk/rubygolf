@@ -13,15 +13,8 @@ class<<Golf={}
 
   def hole4 a
     a.map{ |b|
-      case b
-      when /man/
-        "hat(#{b})"
-      when /cat(.*)/
-        "dead#{$1}"
-      else
-        b[")"] = "(bone))"
-        b
-      end
+      b =~ /man/ ? "hat(#{b})" : (b =~ /cat(.*)/ ? "dead#{$1}" : (b[")"] = "(bone))"
+      b))
     }
   end
 
