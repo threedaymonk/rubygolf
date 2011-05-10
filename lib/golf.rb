@@ -1,7 +1,7 @@
 a=Golf=Hash
 M=-1
 i=0
-  %q	
+ '
     a.inject :*
 
     a.split.sort_by{|w|w[1]}*" "
@@ -41,7 +41,7 @@ i=0
       return e[M][0] if e[M][1] >= e.inject(0){|x,(y,z)|x+z}/2
       b.map!{|x|x-[e[0][0]]}
     }
-  	.split(/
+  '.split(/
 
 /).map{|$a|eval "def a.hole#{i+=1} a
 #$a
