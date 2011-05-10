@@ -28,7 +28,7 @@ i=0
       b
     }.map{|x|[x[0],x[-1]].uniq*"-"}
 
-    a == 2 ? [1, 1] : (b = hole8 a - 1
+    a < 3 ? [1, 1] : (b = hole8 a - 1
     b + [b[-1] + b[-2]])
 
     b = File.readlines(a).map{|b|b.scan /\w+/}
