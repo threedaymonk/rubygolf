@@ -36,7 +36,7 @@ i=0
         h[d]||=0
         h[d]+=1
         h
-      }.sort_by{|_,x|x}
+      }.sort_by &:last
       return e[-1][0] if e[-1][1] >= e.inject(0){|x,(y,z)|x+z}/2
       b.map!{|x|x-[e[0][0]]}
     }
