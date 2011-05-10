@@ -1,4 +1,5 @@
 Golf={}
+i=0
   %q^
     a.inject(1){|b,c|b*c}
 
@@ -40,6 +41,6 @@ Golf={}
       return e[-1][0] if f <= e[-1][1]
       b.map!{|x|x-[e[0][0]]}
     }
-  ^.split(/\n\n/).each_with_index{|a,i| eval "def Golf.hole#{i+1} a
+  ^.split(/\n\n/).map{|a|eval "def Golf.hole#{i+=1} a
 "+a+"
 end"}
