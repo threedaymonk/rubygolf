@@ -903,4 +903,4 @@
                                   
                                                                                                                              
           '.split(/
-/).map(&:size).pack("C*")
+/).map(&:size).pack "C*"
