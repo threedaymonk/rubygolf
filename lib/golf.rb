@@ -1,4 +1,5 @@
 a=Golf=Hash
+M=-1
 i=0
   %q	
     a.inject :*
@@ -24,12 +25,12 @@ i=0
     }
 
     a.inject([]){|b,c|
-      (b[-1]||[])[-1] == c-1 ? b[-1] << c : b << [c]
+      (b[M]||[])[M] == c-1 ? b[M] << c : b << [c]
       b
-    }.map{|x|[x[0],x[-1]].uniq*"-"}
+    }.map{|x|[x[0],x[M]].uniq*"-"}
 
     a < 3 ? [1, 1] : (b = hole8 a - 1
-    b + [b[-1] + b[-2]])
+    b + [b[M] + b[-2]])
 
     b = File.readlines(a).map{|b|b.scan /\w+/}
     loop{
@@ -37,7 +38,7 @@ i=0
         h[d]+=1
         h
       }.sort_by &:last
-      return e[-1][0] if e[-1][1] >= e.inject(0){|x,(y,z)|x+z}/2
+      return e[M][0] if e[M][1] >= e.inject(0){|x,(y,z)|x+z}/2
       b.map!{|x|x-[e[0][0]]}
     }
   	.split(/
