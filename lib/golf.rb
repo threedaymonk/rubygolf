@@ -3,7 +3,7 @@ i=0
   %q^
     a.inject :*
 
-    a.split.sort_by{|w|w[1,1]}*" "
+    a.split.sort_by{|w|w[1]}*" "
 
     hole1 2..a
 
@@ -36,7 +36,7 @@ i=0
         h[d]||=0
         h[d]+=1
         h
-      }.sort_by{|_,x|x}
+      }.sort_by &:last
       return e[-1][0] if e[-1][1] >= e.inject(0){|x,(y,z)|x+z}/2
       b.map!{|x|x-[e[0][0]]}
     }
