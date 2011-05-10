@@ -33,8 +33,7 @@ i=0
 
     b = File.readlines(a).map{|b|b.scan /\w+/}
     loop{
-      e = b.inject({}){|h,c|d=c[0] or next
-        h[d]||=0
+      e = b.inject(Hash.new 0){|h,c|d=c[0] or next
         h[d]+=1
         h
       }.sort_by &:last
