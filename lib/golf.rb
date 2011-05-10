@@ -46,7 +46,7 @@ class<<Golf={}
   end
 
   def hole9 a
-    b = File.read(a).split(/\n/).map{|b|b.split(/, /)}
+    b = File.readlines(a).map{|b|b.chomp.split(/, /)}
     loop{
       e = b.inject({}){|h,c|d=c[0] or next
         h[d]||=0
