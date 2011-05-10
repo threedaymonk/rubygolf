@@ -28,7 +28,8 @@ i=0
       b
     }.map{|x|[x[0],x[-1]].uniq*"-"}
 
-    (1...a).inject([1]){|b,c| b << b[-1]+(b[-2]||0) }
+    a == 2 ? [1, 1] : (b = hole8 a - 1
+    b + [b[-1] + b[-2]])
 
     b = File.readlines(a).map{|b|b.scan /\w+/}
     loop{
