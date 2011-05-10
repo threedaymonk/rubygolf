@@ -19,8 +19,7 @@ class<<Golf={}
   end
 
   def hole5 a
-    c=a.length
-    (0...c).map{|b|
+    (0...c=a.length).map{|b|
       (1..c-b).map{|d|
         a[b,d]
       }
