@@ -1,4 +1,4 @@
-Golf={}
+Golf=Hash
 i=0
  '
     a.inject :*
@@ -8,7 +8,7 @@ i=0
     hole1 2..a
 
     a.map{ |b|
-      b =~ /man/ ? "hat(#{b})" : (b =~ /cat(.*)/ ? "dead#$1" : (b[")"] = "(bone))"
+      b =~ /an/ ? "hat(#{b})" : (b =~ /at(.*)/ ? "dead"+$1 : (b[")"] = "(bone))"
       b))
     }
 
@@ -28,18 +28,20 @@ i=0
       b
     }.map{|x|[x[0],x[-1]].uniq*"-"}
 
-    (1...a).inject([1]){|b,c| b << b[-1]+(b[-2]||0) }
+    a < 3 ? [1, 1] : (b = hole8 a - 1
+    b + [b[-1] + b[-2]])
 
     b = File.readlines(a).map{|b|b.scan /\w+/}
     loop{
-      e = b.inject({}){|h,c|d=c[0] or next
-        h[d]||=0
+      e = b.inject(new 0){|h,c|d=c[0] or next
         h[d]+=1
         h
       }.sort_by &:last
       return e[-1][0] if e[-1][1] >= e.inject(0){|x,(y,z)|x+z}/2
       b.map!{|x|x-[e[0][0]]}
     }
-  '.split(/\n\n/).map{|a|eval "def Golf.hole#{i+=1} a
-"+a+"
-end"}
+  '.split(/
+
+/).map{|$a|eval "def Golf.hole#{i+=1} a
+#$a
+  end"}
