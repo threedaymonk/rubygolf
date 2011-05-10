@@ -12,11 +12,11 @@ i=0
       b))
     }
 
-    (0...c=a.length).map{|b|
+    (0...c=a.size).map{|b|
       (1..c-b).map{|d|
         a[b,d]
       }
-    }.flatten(1).sort_by{|x|[x.length,x]}
+    }.flatten(1).sort_by{|x|[x.size,x]}
 
     (1..a).map{|b|
       c = [b%3<1?:fizz: "",b%5<1?:buzz: ""]*""
