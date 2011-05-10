@@ -36,7 +36,7 @@ class<<Golf={}
 
   def hole6 a
     (1..a).map{|b|
-      c = [b%3<1&&:fizz,b%5<1&&:buzz].reject{|x|!x}*""
+      c = [b%3<1?:fizz: "",b%5<1?:buzz: ""]*""
       c == "" ? b : c
     }
   end
