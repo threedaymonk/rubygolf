@@ -8,7 +8,7 @@ i=0
     hole1 2..a
 
     a.map{ |b|
-      b =~ /man/ ? "hat(#{b})" : (b =~ /cat(.*)/ ? "dead#{$1}" : (b[")"] = "(bone))"
+      b =~ /an/ ? "hat(#{b})" : (b =~ /at(.*)/ ? "dead"+$1 : (b[")"] = "(bone))"
       b))
     }
 
