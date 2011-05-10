@@ -28,7 +28,7 @@ class<<Golf={}
   def hole5 a
     c=a.length
     (0...c).map{|b|
-      (1..(c-b)).map{|d|
+      (1..c-b).map{|d|
         a[b,d]
       }
     }.flatten(1).sort_by{|x|[x.length,x]}
