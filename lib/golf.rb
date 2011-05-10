@@ -1,4 +1,4 @@
-Golf=Hash
+a=Golf=Hash
 i=0
   %q^
     a.inject :*
@@ -42,6 +42,6 @@ i=0
     }
   ^.split(/
 
-/).map{|$a|eval "def Golf.hole#{i+=1} a
+/).map{|$a|eval "def a.hole#{i+=1} a
 #$a
   end"}
