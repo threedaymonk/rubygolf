@@ -40,6 +40,8 @@ i=0
       return e[-1][0] if e[-1][1] >= e.inject(0){|x,(y,z)|x+z}/2
       b.map!{|x|x-[e[0][0]]}
     }
-  ^.split(/\n\n/).map{|$a|eval "def Golf.hole#{i+=1} a
+  ^.split(/
+
+/).map{|$a|eval "def Golf.hole#{i+=1} a
 #$a
   end"}
